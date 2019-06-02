@@ -1,7 +1,7 @@
 var {findArticles} = require('../models/article');
 module.exports = function (app) {
     app.get('/',function(req,res){
-        findArticles().then(function(data){
+        findArticles(function(data){
             res.render('index',{articles:data})
         })
     })
