@@ -21,10 +21,11 @@ var articleController = require('./controllers/article');
 app.set('views',path.join(__dirname,'views'));// 设置模板存放目录 若不设则默认views
 app.set('view engine','pug'); // 设置模板引擎为pug   pug特色block功能，extends继承。  区别于express的includes   
 
-var props = {
-    articles:[],
-    title: 'Add article'
-}
+app.use(express.static(path.join(__dirname,"public")));
+// var props = {
+//     articles:[],
+//     title: 'Add article'
+// }
 
 articleController(app)
 
