@@ -47,8 +47,10 @@ let deleteArticle = function(cb,param){
         return cb();
     })
 }
-module.exports = {findArticles,
+module.exports = {
+    findArticles,
     addNewArticle,
     showArticleDetail,
     updataArticle,
-    deleteArticle};
+    deleteArticle
+};

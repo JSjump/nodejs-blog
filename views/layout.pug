@@ -19,7 +19,21 @@ html(lang = html)
             li.nav-item
               a.nav-link(href='/article/new') Add Article
 
+          ul.navbar-nav.narbar-right
+            if user
+              li.nav-item
+                a.nav-link(href='/users/logout') Logout
+            else
+              li.nav-item
+                a.nav-link(href='/register') Register
+              li.nav-item
+                a.nav-link(href='/login') Login
+
     .container
+      != messages('message', locals)
+      if errors
+        each error ,i in errors
+          div(class="alert alert-danger") #{error.msg}
       block content
       br
       hr
