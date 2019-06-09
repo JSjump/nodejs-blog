@@ -5,7 +5,7 @@ const passport = require('passport'); // 引入passport进行权限认证
 const authen = require('./config/passport');
 var articleController = require('./controllers/article');
 const userController = require('./controllers/users');
-
+console.log('start')
 
 var app = express();
 

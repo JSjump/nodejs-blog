@@ -16,7 +16,8 @@ html(lang = html)
               a.nav-link(href='/')
                 | Home
                 span.sr-only (current)
-            li.nav-item
+            if user
+              li.nav-item
               a.nav-link(href='/article/new') Add Article
 
           ul.navbar-nav.narbar-right

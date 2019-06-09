@@ -27,7 +27,6 @@ module.exports = function(passport) {
       //验证用户是否登录时需要用到反序列化，session根据id取回用户的登录信息并存储在req.user中
       passport.deserializeUser(function(id, done) { // 反序列化用户ID
         User.findById(id, function (err, user) {
-            console.log(user,'lll11111111111111111111111111111111')
           done(err, user);
         });
       });
