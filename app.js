@@ -49,9 +49,9 @@ app.use(express.static(path.join(__dirname,"public"))); // 设置静态目录
 //     title: 'Add article'
 // }
 
-authen(passport); //passport 权限验证
+authen(passport); //passport 权限验证  // 用户鉴权，主要3方面。 登入，登出，路由守护
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session()); // app.use(passport.authenticate('session')); // 从session中提取用户信息
 
 app.get('*',function(req,res,next){// 访问任何请求，都会经过这个中间件
     res.locals.user = req.user || null;  // 设置每个 res.locals.user 的值
